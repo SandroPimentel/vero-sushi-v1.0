@@ -1,0 +1,51 @@
+{
+  "sauce": [
+    {
+      "id": "s1",
+      "name": "Soja Sucré",
+      "image": "chemin/vers/sojasucre.jpg",
+      "description": "Sauce soja légèrement sucrée",
+      "Prix": 2
+    },
+    {
+      "id": "s2",
+      "name": "Soja Salé",
+      "image": "chemin/vers/sojasale.jpg",
+      "description": "Sauce soja traditionnelle salée",
+      "Prix": 2
+    }
+    
+  ],
+  "accompagnements": [
+    {
+      "id": "a1",
+      "name": "Wasabi",
+      "image": "chemin/vers/wasabi.jpg",
+      "description": "Pâte de wasabi piquante",
+      "Prix": 2
+    },
+    {
+      "id": "a2",
+      "name": "Gingembre",
+      "image": "chemin/vers/gingembre.jpg",
+      "description": "Gingembre mariné",
+      "Prix": 2
+    },
+    {
+      "id": "a3",
+      "name": "Wakamé",
+      "image": "chemin/vers/wakame.jpg",
+      "description": "Salade de Wakamé",
+      "Prix": 2
+    }
+  ],
+  "baguettes": [
+    {
+      "id": "b1",
+      "name": "Paire de baguettes",
+      "image": "chemin/vers/baguettes.jpg",
+      "description": "Paires de baguettes en bois",
+      "Prix": 0
+    }
+  ]
+}

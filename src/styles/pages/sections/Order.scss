@@ -1,0 +1,7 @@
+@import '../../variables';
+.order {
+    display: flex;
+    background-color: $black-color;
+    height: 500vh;
+    flex-direction: column;
+}

@@ -1,0 +1,36 @@
+.menu-card {
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .menu-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .menu-card img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .menu-card h3 {
+    margin-top: 10px;
+    color: #333;
+  }
+  
+  .menu-card p {
+    color: #666;
+  }
+  
+  /* Style lorsque le menu est sélectionné */
+  .menu-card-selected {
+    border: 2px solid blue;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
