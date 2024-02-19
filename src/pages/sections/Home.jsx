@@ -23,7 +23,7 @@ const Home = () => {
     <div className={`home ${isLoaded ? 'loaded' : ''}`}>
       <div className="overlay"></div>
       <div className='home-content'>
-        <h1>Savourez l'art du sushi.</h1>
+        <h1>Savourez l'art.</h1>
         <h3>Sushi frais, à emporter : une expérience gourmande à découvrir.</h3>
         <RouterLink className="order-button" to="/order">
           <button>Commander</button>
