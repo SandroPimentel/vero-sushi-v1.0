@@ -1,63 +1,57 @@
-import React, { useState, useEffect } from 'react';
-import SushiBox from '../../components/SushiBox';
-import menuData from '../../data/MenuData.json';
-import '../../styles/pages/sections/Menu.scss';
+import React, { useState, useRef } from 'react';
+import SushiBox from '../../components/SushiBox'; // Assurez-vous que ce composant est correctement importé
+import menuData from '../../data/MenuData.json'; // Vérifiez le chemin d'accès au fichier JSON
+import Slider from 'react-slick'; // Import de Slider depuis react-slick
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import '../../styles/pages/sections/Menu.scss'; // Vérifiez le chemin d'accès au fichier de styles
 
 const Menu = () => {
   const [selectedCategory, setSelectedCategory] = useState(menuData[0].name);
-  const [centeredCardIndex, setCenteredCardIndex] = useState(0);
+  const sliderRef = useRef(null);
 
-  useEffect(() => {
-        const sushiIndex = menuData.findIndex((sushi) => sushi.name === selectedCategory);
-    setCenteredCardIndex(sushiIndex);
-  }, [selectedCategory]);
-
- const handleCategoryClick = (category) => {
-  const sushiIndex = menuData.findIndex((sushi) => sushi.name === category);
-  setCenteredCardIndex(sushiIndex);
-  setSelectedCategory(category);
-};
-
-
-  const handleSushiClick = (sushiName) => {
-    console.log(`Sushi clicked: ${sushiName}`);
+  // Configuration de Slider
+  const settings = {
+    infinite: true, // Permet de boucler sur les éléments du carrousel
+    slidesToShow: 3, // Nombre d'éléments à afficher dans le carrousel
+    centerMode: true, // Centre le slide actif
+    slidesToScroll: 1, // Nombre d'éléments à défiler
+    afterChange: current => setSelectedCategory(menuData[current].name) // Met à jour la catégorie sélectionnée après un changement de slide
   };
 
-  const cardIndices = [0, 1, 2];
+  // Gère les clics sur les catégories
+  const handleCategoryClick = (categoryName) => {
+    const index = menuData.findIndex(menu => menu.name === categoryName);
+    setSelectedCategory(categoryName);
+    sliderRef.current.slickGoTo(index); // Déplace le Slider vers l'élément sélectionné
+  };
 
   return (
     <div className='menu'>
-      <div className='menu-overlay'></div>
-      <div className="category-buttons">
-        {menuData.map((sushi) => (
+      <div className="menu-category-buttons">
+        {menuData.map((menu, index) => (
           <button
-            key={sushi.name}
-            onClick={() => handleCategoryClick(sushi.name)}
-            className={selectedCategory === sushi.name ? 'active' : ''}
-          >
-            {sushi.name}
+            key={menu.name}
+            className={selectedCategory === menu.name ? 'active' : ''}
+            onClick={() => handleCategoryClick(menu.name)}>
+            {menu.name}
           </button>
         ))}
       </div>
-      <div className="carousel-container">
-        {cardIndices.map((index) => {
-          const sushi = menuData[(centeredCardIndex + index - 1 + menuData.length) % menuData.length];
-          const isSelected = selectedCategory === sushi.name;
-
-          return (
-            <SushiBox
-              key={sushi.name}
-              name={sushi.name}
-              image={sushi.image}
-              details={sushi.details}
-              miniDescription={sushi.miniDescription}
-              Prix={sushi.Prix}
-              onClick={handleSushiClick}
-              isSelected={isSelected}
-            />
-          );
-        })}
-      </div>
+      <Slider ref={sliderRef} {...settings}>
+        {menuData.map((menu, index) => (
+          <SushiBox
+            key={menu.name}
+            name={menu.name}
+            image={menu.image}
+            details={menu.details}
+            miniDescription={menu.miniDescription}
+            Prix={menu.Prix}
+            onClick={handleCategoryClick}
+            isSelected={selectedCategory === menu.name}
+          />
+        ))}
+      </Slider>
     </div>
   );
 };

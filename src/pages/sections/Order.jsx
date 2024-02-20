@@ -8,8 +8,10 @@ import Form from '../../components/Form.jsx';
 import SupplementsCards from '../../components/SupplementsCards.jsx';
 import SushiCards from '../../components/SushiCards.jsx';
 import '../../styles/pages/sections/Order.scss';
+import { useLocation } from 'react-router-dom';
 
 const Order = () => {
+  const location = useLocation();
   const [selectedMenu, setSelectedMenu] = useState(null);
   const [selectedRolls, setSelectedRolls] = useState([]);
   const [selectedSushis, setSelectedSushis] = useState([]);
@@ -58,6 +60,14 @@ const Order = () => {
     setSelectedAccompaniments([]);
     setSelectedBaguettes([]);
   };
+
+  useEffect(() => {
+    // Check if the location state exists and has the selectedMenuIndex property
+    if (location.state && location.state.selectedMenuIndex !== undefined) {
+      // Use the selected menu index to update the state
+      selectMenu(location.state.selectedMenuIndex);
+    }
+  }, [location]);
 
   const toggleSelection = (itemName, selectedItems, setSelectedItems, maxItems) => {
     const currentIndex = selectedItems.indexOf(itemName);
@@ -144,14 +154,18 @@ const Order = () => {
     setSelectedDate(validDates[0].toISOString());
   }, []);
 
+  useEffect(() => {
+    console.log("Selected date:", selectedDate);
+  }, [selectedDate]);
+
   const handleDateChange = (e) => {
-    // Ici, vous pourriez vouloir vous assurer que la valeur sélectionnée est en fait dans la liste des dates valides.
     const newDateValue = e.target.value;
     if (validDates.some(date => date.toISOString() === newDateValue)) {
       setSelectedDate(newDateValue);
+    } else {
+      console.error("Date invalide sélectionnée");
     }
   };
-
   useEffect(() => {
     const menuPrice = selectedMenu ? MenuData[selectedMenu]?.Prix : 0;
 
@@ -265,11 +279,11 @@ const Order = () => {
           value={selectedDate} // Assurez-vous que cela correspond exactement à la valeur des options.
           onChange={handleDateChange}
         >
-          {validDates.map((date) => (
-            <option key={date.toISOString()} value={date.toISOString()}>
-              {date.toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
-            </option>
-          ))}
+          {validDates.map((date, index) => (
+  <option key={index} value={date.toISOString()}>
+    {date.toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+  </option>
+))}
         </select>
       </div>
 
