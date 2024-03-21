@@ -1,0 +1,14 @@
+@import '../../variables';
+.order {
+    display: flex;
+    background-color: $black-color;
+    min-height: 100vh;
+    flex-direction: column;
+
+
+    .total-price {
+        font-size: 2em;
+        margin-bottom: 3%;
+        margin-left: 3%;
+    }
+}

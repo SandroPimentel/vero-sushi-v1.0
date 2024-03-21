@@ -1,41 +1,66 @@
-.supplement-card {
-    border: 1px solid #ddd;
+@import '../variables';
+
+.supplements-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; // Espacement entre chaque catégorie
+
+  .supplements-category, .baguettes-category {
+    background: $black-color;
+    padding: 15px;
+    margin: 0 10%;
+    margin-bottom: 4%;
     border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    margin: 10px;
-    display: inline-block; /* ou flex selon votre layout */
-    width: 200px;
+
+    h3 {
+      margin-bottom: 15px;
+      color: $white-color;
+    }
+
+    .supplements-card, .quantity-selector { // Combine styles for both supplements and baguettes
+      display: flex;
+      justify-content: space-between; // Change to justify-content for equal spacing
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .supplement-card, .baguettes-selector { // Combine styles for both cards and baguettes selector
+        flex: 1 0 100px; // Adjust the flex-basis to control the minimum width
+        background: $black-color;
+        border: 2px solid $white-color;
+        border-radius: 8px;
+        padding: 10px;
+        text-align: center;
+
+        img {
+          max-width: 100px;
+          margin: 0 auto 10px;
+        }
+
+        p {
+          font-weight: 700;
+          margin-bottom: 2%;
+          color: $white-color; // Set text color for better visibility
+        }
+
+        button {
+          background: $white-color;
+          color: $black-color;
+          border: 2px solid $white-color;
+          border-radius: 2px;
+          padding: 5px 10px;
+          cursor: pointer;
+
+          &:hover {
+            background: $black-color;
+            color: $white-color;
+          }
+        }
+
+        span {
+          font-weight: bold;
+          color: $white-color; // Set text color for better visibility
+        }
+      }
+    }
   }
-  
-  .supplement-card img {
-    max-width: 100px; /* Ajustez selon la taille désirée */
-    height: auto;
-    margin-bottom: 10px;
-  }
-  
-  .quantity-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .quantity-controls button {
-    padding: 5px 10px;
-    font-size: 1em;
-    color: #333;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .quantity-controls button:hover {
-    background-color: #e0e0e0;
-  }
-  
-  .quantity-controls span {
-    font-size: 1.2em;
-  }
-  
+}

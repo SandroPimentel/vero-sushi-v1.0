@@ -1,17 +1,21 @@
 import React from 'react';
-import '../styles/components/MenuCards.scss';
+import '../styles/components/MenuCards.scss'
 
-const MenuCards = ({ menu, onSelect, isSelected }) => {
-  const { name, image, Description, Prix } = menu;
-
+const MenuCards = ({ menuData, onSelectMenu, selectedMenu }) => {
   return (
-    <div className={`menu-card ${isSelected ? 'selected' : ''}`} onClick={onSelect}>
-      <img src={image} alt={name} />
-      <h3>{name}</h3>
-      <p>{Description}</p>
-      <p>Prix: {Prix}€</p>
+    <div className='menus-cards-container'>
+      {menuData.map((menu) => (
+        <div key={menu.name} 
+             className={`menu-card ${selectedMenu && selectedMenu.name === menu.name ? 'selected' : ''}`}
+             onClick={() => onSelectMenu(menu)}>
+          <img src={menu.image} alt={menu.name} />
+          <h3>{menu.name}</h3>
+          <p>{menu.Description}</p>
+        </div>
+      ))}
     </div>
   );
 };
 
-export default MenuCards;
+
+export default MenuCards

@@ -1,6 +1,6 @@
 // HomePage.js
 import React from 'react';
-import Order from './sections/Order'
+import Order from './sections/OrderMenu'
 
 
 const OrderPage = () => {

@@ -1,58 +1,102 @@
 [
   {
     "name": "2 Personnes",
-    "image": "assets/Sushi.webp",
-    "Description": "Une expérience partagée, délectez-vous de notre variété avec un proche.",
+    "image": "assets/SushiBox.webp",
+    "Description": "Partagez une expérience culinaire à deux avec 28 sushis variés, pour une dégustation qui ravira vos papilles.",
     "details": [
-      "- 28 sushis parmi un assortiment de California Rolls, Sushis, Makis, etc.",
+      "- 28 sushis parmi un assortiment de California Rolls, Sushis, Makis...",
       "- 2 paires de baguettes",
       "- Sauce soja sucrée et salée",
       "- Trois accompagnements : Wasabi, Gingembre, Wakamé"
     ],
     "Prix": 33,
     "maxRolls": 3,
-    "maxSushis": 2
+    "maxSushis": 2,
+    "supplementsLimits": {
+      "sauces": {
+        "free": 2
+      },
+      "accompagnements": {
+        "free": 3
+      },
+      "baguettes": {
+        "max": 2
+      }
+    }
   },
   {
     "name": "3 Personnes",
-    "image": "assets/Sushi.webp",
-    "Description": "Pour un petit groupe, savourez un éventail de nos meilleures offres.",
+    "image": "assets/SushiBox.webp",
+    "Description": "Idéal pour un petit groupe, ce pack offre 42 sushis, permettant à chacun de savourer notre sélection.",
     "details": [
-      "- 42 sushis parmi un assortiment de California Rolls, Sushis, Makis, etc.",
+      "- 42 sushis parmi un assortiment de California Rolls, Sushis, Makis...",
       "- 3 paires de baguettes",
       "- Sauce soja sucrée et salée",
       "- Trois accompagnements : Wasabi, Gingembre, Wakamé"
     ],
     "Prix": 50,
     "maxRolls": 5,
-    "maxSushis": 3
+    "maxSushis": 3,
+    "supplementsLimits": {
+      "sauces": {
+        "free": 2
+      },
+      "accompagnements": {
+        "free": 3
+      },
+      "baguettes": {
+        "max": 3
+      }
+    }
   },
   {
     "name": "4 Personnes",
-    "image": "assets/Sushi.webp",
-    "Description": "L'assortiment idéal pour rassembler la famille et profiter d'une variété de sushis.",
+    "image": "assets/SushiBox.webp",
+    "Description": "Rassemblez la famille autour de 54 sushis, pour une expérience gustative riche et variée.",
     "details": [
-      "- 54 sushis parmi un assortiment de California Rolls, Sushis, Makis, etc.",
+      "- 54 sushis parmi un assortiment de California Rolls, Sushis, Makis...",
       "- Paires de baguettes pour toute la famille",
       "- Sauce soja sucrée et salée",
       "- Trois accompagnements : Wasabi, Gingembre, Wakamé"
     ],
     "Prix": 60,
     "maxRolls": 6,
-    "maxSushis": 3
+    "maxSushis": 3,
+    "supplementsLimits": {
+      "sauces": {
+        "free": 2
+      },
+      "accompagnements": {
+        "free": 3
+      },
+      "baguettes": {
+        "max": 4
+      }
+    }
   }, 
   {
     "name": "5 Personnes",
-    "image": "assets/Sushi.webp",
-    "Description": "Une sélection parfaite pour une aventure gustative en solo, découvrez nos saveurs uniques.",
+    "image": "assets/SushiBox.webp",
+    "Description": "Un festin pour cinq, notre pack de 60 sushis est conçu pour partager et déguster ensemble, célébrant la variété et la qualité.",
     "details": [
-      "- 14 sushis parmi un assortiment de California Rolls, Sushis, Makis, etc.",
+      "- 60 sushis parmi un assortiment de California Rolls, Sushis, Makis...",
       "- 1 paire de baguettes par personne",
       "- Sauce soja sucrée et salée",
       "- Trois acconpagnements : Wasabi, Gingembre, Wakamé"
     ],
     "Prix": 80,
     "maxRolls": 7,
-    "maxSushis": 3
+    "maxSushis": 3,
+    "supplementsLimits": {
+      "sauces": {
+        "free": 2
+      },
+      "accompagnements": {
+        "free": 3
+      },
+      "baguettes": {
+        "max": 5
+      }
+    }
   }
 ]

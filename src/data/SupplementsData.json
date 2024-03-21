@@ -1,16 +1,16 @@
 {
-  "sauce": [
+  "sauces": [
     {
       "id": "s1",
       "name": "Soja Sucré",
-      "image": "chemin/vers/sojasucre.jpg",
+      "image": "assets/SauceSoja.webp",
       "description": "Sauce soja légèrement sucrée",
       "Prix": 2
     },
     {
       "id": "s2",
       "name": "Soja Salé",
-      "image": "chemin/vers/sojasale.jpg",
+      "image": "assets/SauceSoja.webp",
       "description": "Sauce soja traditionnelle salée",
       "Prix": 2
     }
@@ -20,21 +20,21 @@
     {
       "id": "a1",
       "name": "Wasabi",
-      "image": "chemin/vers/wasabi.jpg",
+      "image": "assets/wasabi.webp",
       "description": "Pâte de wasabi piquante",
       "Prix": 2
     },
     {
       "id": "a2",
       "name": "Gingembre",
-      "image": "chemin/vers/gingembre.jpg",
+      "image": "assets/wakamé.webp",
       "description": "Gingembre mariné",
       "Prix": 2
     },
     {
       "id": "a3",
       "name": "Wakamé",
-      "image": "chemin/vers/wakame.jpg",
+      "image": "assets/Gingembre.webp",
       "description": "Salade de Wakamé",
       "Prix": 2
     }
@@ -43,7 +43,7 @@
     {
       "id": "b1",
       "name": "Paire de baguettes",
-      "image": "chemin/vers/baguettes.jpg",
+      "image": "assets/baguettes.webp",
       "description": "Paires de baguettes en bois",
       "Prix": 0
     }

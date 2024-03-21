@@ -2,64 +2,64 @@
   "sushi": [
     {
       "name": "Sushi 1",
-      "image": "chemin/vers/sushi1.jpg",
+      "image": "assets/sushi.webp",
       "description": "Description du Sushi 1"
     },
     {
       "name": "Sushi 2",
-      "image": "chemin/vers/sushi2.jpg",
+      "image": "assets/sushi.webp",
       "description": "Description du Sushi 2"
     },
     {
       "name": "Sushi 3",
-      "image": "chemin/vers/sushi3.jpg",
+      "image": "assets/sushi.webp",
       "description": "Description du Sushi 3"
     },
     {
       "name": "Sushi 4",
-      "image": "chemin/vers/sushi4.jpg",
+      "image": "assets/sushi.webp",
       "description": "Description du Sushi 4"
     }
   ],
   "rolls": [
     {
       "name": "Roll 1",
-      "image": "chemin/vers/roll1.jpg",
+      "image": "assets/roll.webp",
       "description": "Description du Roll 1"
     },
     {
       "name": "Roll 2",
-      "image": "chemin/vers/roll2.jpg",
+      "image": "assets/roll.webp",
       "description": "Description du Roll 2"
     },
     {
       "name": "Roll 3",
-      "image": "chemin/vers/roll3.jpg",
+      "image": "assets/roll.webp",
       "description": "Description du Roll 3"
     },
     {
       "name": "Roll 4",
-      "image": "chemin/vers/roll4.jpg",
+      "image": "assets/roll.webp",
       "description": "Description du Roll 4"
     },
     {
       "name": "Roll 5",
-      "image": "chemin/vers/roll5.jpg",
+      "image": "assets/roll.webp",
       "description": "Description du Roll 5"
     },
     {
       "name": "Roll 6",
-      "image": "chemin/vers/roll6.jpg",
+      "image": "assets/roll.webp",
       "description": "Description du Roll 6"
     },
     {
       "name": "Roll 7",
-      "image": "chemin/vers/roll7.jpg",
+      "image": "assets/roll.webp",
       "description": "Description du Roll 7"
     },
     {
       "name": "Roll 8",
-      "image": "chemin/vers/roll8.jpg",
+      "image": "assets/roll.webp",
       "description": "Description du Roll 8"
     }
   ]

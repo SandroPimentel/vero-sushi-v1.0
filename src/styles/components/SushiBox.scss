@@ -1,18 +1,19 @@
 @import '../variables';
 
 .sushi-box {
-  position: relative;
-  color: $black-color; // Assurez-vous que cette variable est définie ou remplacez-la par une couleur hexadécimale directe, par ex. #000;
-  background-color: $white-color; // De même, assurez-vous que cette variable est définie ou utilisez une couleur directe;
-  overflow: hidden;
-  width: 100%; // Adaptation pour le plein usage de l'espace dans le slide
-  box-sizing: border-box;
-  padding: 15px; // Ajout d'un peu de padding autour du contenu
-  border-radius: 4px; // Arrondissement des coins si nécessaire
-
-  .header, .image-container, img {
-    width: 100%; // Assurez-vous que l'image et les conteneurs s'adaptent à la largeur
+  color: $black-color;
+  background-color: $white-color;
+  padding: 2px;
+  h3 {
+    background-color: $black-color;
+    color: $white-color;
+    font-family: 'hitto';
+    font-weight: 300;
+    font-size: 2em;
+    text-align: center;
+    padding: 0.5em 0em;
   }
+
 
   img {
     height: auto;
@@ -21,16 +22,39 @@
     margin: 0 auto; // Centrer l'image si moins large que le conteneur
   }
 
-  .price, .Order-menu-button {
-    text-align: center; // Centre le texte et le bouton de commande
-    width: 100%; // Utilisation de la pleine largeur pour le texte du prix et le bouton
-    display: block; // Assurez-vous que le bouton s'affiche correctement
-  }
+  .price {
+    background-color: $black-color;
+    color: $white-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 0em;
 
-  // Adaptation pour une meilleure visibilité lors de la sélection
-  &.card-clicked {
-    transform: scale(1.05);
-    border: 2px solid blue; // Changement pour montrer la sélection
-    z-index: 2; // S'assure qu'il se distingue des autres cartes
+    button {
+      background-color: $white-color;
+      border: 2px solid $white-color;
+      color: $black-color;
+      padding: 0.5em 1em;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      outline: none;
+      transition: background-color 0.3s, transform 0.3s;
+      border-radius: 2px;
+      margin-left: 1em;
+      margin-right: 1em;
+
+      &.active {
+        background-color: $black-color;
+        color: $white-color;
+        border: 2px solid $white-color;
+      }
+
+      &:hover {
+        background-color: $black-color;
+        color: $white-color;
+        border: 2px solid $white-color;
+      }
+    }
   }
 }

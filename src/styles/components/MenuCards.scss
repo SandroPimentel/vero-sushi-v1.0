@@ -1,36 +1,47 @@
-.menu-card {
-    width: 400px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 10px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+@import '../variables';
+.menus-cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+  margin-top: 5%;
+  gap: 5%; 
+
+  .menu-card {
+    max-width: 300px;
+    border: 4px solid $white-color; // Bordure légère pour les cartes non sélectionnées
+    border-radius: 8px; // Bords arrondis pour une apparence plus douce
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Ombre subtile pour un effet de profondeur
+    transition: transform 0.5s ease;
+    margin-bottom: 5%;
+
+    &:hover {
+      transform: scale(1.05); 
+      cursor: pointer;
+      border-color: $hover-color; // Bordure bleue pour la carte sélectionnée
+    }
+
+    img {
+      width: 100%; // Utilise la largeur complète de la carte
+      height: auto; // Garde le ratio de l'image
+      border-top-left-radius: 8px; // Arrondit les coins supérieurs de l'image
+      border-top-right-radius: 8px; // Arrondit les coins supérieurs de l'image
+    }
+
+    h3, p {
+      padding: 0.2em 1em; // Espacement intérieur pour le texte
+    }
+
+    h3 {
+      margin-top: 0.5em; // Espacement au-dessus du titre
+    }
+
+    p {
+      margin-bottom: 1em; // Espacement en dessous du paragraphe
+    }
   }
-  
-  .menu-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  .menu-card img {
-    width: 100px;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  .menu-card h3 {
-    margin-top: 10px;
-    color: #333;
-  }
-  
-  .menu-card p {
-    color: #666;
-  }
-  
-  /* Style lorsque le menu est sélectionné */
+
   .menu-card.selected {
-    border: 2px solid blue;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    border-color: $hover-color; // Bordure bleue pour la carte sélectionnée
+    transform: scale(1.05); 
   }
-  
+}

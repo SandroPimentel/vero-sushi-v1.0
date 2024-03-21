@@ -1,14 +1,22 @@
 import React from 'react';
-import '../styles/components/SushiCards.scss'
+import '../styles/components/SushiCards.scss';
 
-const SushiCards = ({ item, onSelect, isSelected, maxItems }) => {
-  const { name, image, description } = item;
+const SushiCards = ({ items, selectedItems, maxSelection, onSelectionChange }) => {
+  const handleSelection = (item) => {
+    if (selectedItems.length < maxSelection || selectedItems.includes(item)) {
+      onSelectionChange(item);
+    }
+  };
 
   return (
-    <div className={`sushi-card ${isSelected ? 'selected' : ''}`} onClick={onSelect}>
-      <img src={image} alt={name} />
-      <h3>{name}</h3>
-      <p>{description}</p>
+    <div className="sushi-cards-container">
+      {items.map((item) => (
+        <div key={item.name} className={`sushi-card ${selectedItems.includes(item) ? 'selected' : ''}`} onClick={() => handleSelection(item)}>
+          <img src={item.image} alt={item.name} />
+          <h3>{item.name}</h3>
+          <p>{item.description}</p>
+        </div>
+      ))}
     </div>
   );
 };

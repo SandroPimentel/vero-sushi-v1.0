@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/components/SushiBox.scss';
 
-const SushiBox = ({ name, image, details, miniDescription, Prix, onClick, isSelected }) => {
+const SushiBox = ({ name, image, details, Description, Prix, onClick, isSelected, onOrderClick }) => {
   const handleSushiClick = () => {
     onClick(name);
   };
@@ -18,13 +18,16 @@ const SushiBox = ({ name, image, details, miniDescription, Prix, onClick, isSele
           <img src={image} alt={name} />
         </div>
       </div>
-      <p className="mini-description">{miniDescription}</p>
+      <p className="mini-description">{Description}</p>
       <ul>
         {detailsList.map((detail, index) => (
           <li key={index}>{detail}</li>
         ))}
       </ul>
-      {Prix !== null && Prix !== undefined && <p className="price"> <button className='Order-menu-button'>Commander</button> {Prix} €</p>}
+      <div className='bottom'></div>
+      <p className="price"> 
+      <button className='Order-menu-button' onClick={onOrderClick}>Commander</button> 
+      </p>
     </div>
   );
 };

@@ -1,6 +1,8 @@
 @import '../../variables';
 
 .menu{
+
+  background-color: $black-color;
   .menu-category-buttons {
     display: flex;
     justify-content: center;
@@ -8,27 +10,62 @@
 
     button {
       background-color: $white-color;
-      color: black;
+      border: 2px solid $white-color;
+      color: $black-color;
       padding: 10px 20px;
-      font-size: 1em;
-      margin: 0 10px;
+      font-size: 16px;
+      font-weight: bold;
       cursor: pointer;
-      transition: all 0.3s;
+      outline: none;
+      transition: background-color 0.3s, transform 0.3s;
+      border-radius: 2px;
+      margin-left: 1em;
+      margin-right: 1em;
 
       &.active {
-        background-color: black;
+        background-color: $black-color;
         color: $white-color;
+        border: 2px solid $white-color;
       }
 
       &:hover {
-        background-color: lightblue;
+        background-color: $black-color;
         color: $white-color;
+        border: 2px solid $white-color;
       }
     }
   }
 
   .slick-slide {
+    margin: 4em 0em;
+    padding: 0 4em;
     display: flex;
     justify-content: center;
-  }
+    transition: all 0.5s; /* Transition pour l'effet d'agrandissement */
+    opacity: 0.5;
+    
+    button {
+      cursor: default;
+      &:hover {
+        background-color: $white-color;
+        border: 2px solid $white-color;
+        color: $black-color;
+      }
+    }
+
+    &.slick-current {
+        transform: scale(1.05); /* Agrandir l'élément actif */
+        opacity: 1;
+        cursor: default;
+
+        button {
+          cursor: pointer;
+          &:hover {
+            background-color: $black-color;
+            color: $white-color;
+            border: 2px solid $white-color;
+          }
+        }
+    }
+}
 }
