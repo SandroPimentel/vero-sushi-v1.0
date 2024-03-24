@@ -17,21 +17,21 @@ const SupplementsCards = ({ supplementsData, menuSupplementsLimits, onCostChange
 
     const calculateCategoryCost = (category, data) => {
       const categorySelection = selectedSupplements[category];
-      const limit = menuSupplementsLimits[category]?.free || 0; // Assurez-vous que c'est 'gratuites' et non 'free'
-      let totalSelected = Object.values(categorySelection).reduce((acc, count) => acc + count, 0);
+      const limit = menuSupplementsLimits[category]?.free || 0;
+      let totalSelected = category === 'baguettes' ? categorySelection : Object.values(categorySelection).reduce((acc, count) => acc + count, 0);
 
       if (totalSelected > limit) {
-        extraCost += (totalSelected - limit) * data[0].Prix;
+        extraCost += (totalSelected - limit) * (category === 'baguettes' ? data.Prix : data[0].Prix);
       }
     };
 
-    calculateCategoryCost('sauces', supplementsData.sauces); // Assurez-vous que c'est 'sauce' et non 'sauces'
+    calculateCategoryCost('sauces', supplementsData.sauces);
     calculateCategoryCost('accompagnements', supplementsData.accompagnements);
+    calculateCategoryCost('baguettes', supplementsData.baguettes[0]); // Assurez-vous que supplementsData.baguettes[0] existe et contient l'objet baguette avec un prix
 
-    setLocalExtraCost(extraCost); // Mettez à jour le coût supplémentaire local
+    setLocalExtraCost(extraCost);
   }, [selectedSupplements, supplementsData, menuSupplementsLimits]);
 
-  // Utilisez useEffect pour appeler onCostChange lorsque localExtraCost change
   useEffect(() => {
     onCostChange(localExtraCost);
   }, [localExtraCost, onCostChange]);
@@ -46,18 +46,23 @@ const SupplementsCards = ({ supplementsData, menuSupplementsLimits, onCostChange
       }
   
       const newSelection = { ...prev, [category]: newCategorySelection };
-      console.log("Mise à jour de selectedSupplements:", newSelection); // Ajoutez ce log pour déboguer
-      onSupplementsChange(newSelection); // Utilisez la fonction de rappel pour remonter l'état
+      console.log("Mise à jour des suppléments :", newSelection);
+      onSupplementsChange(newSelection);
       return newSelection;
     });
   };
-  
 
   const handleSelectBaguettes = (count) => {
     if (count >= 0 && count <= menuSupplementsLimits.baguettes.max) {
-      setSelectedSupplements(prev => ({ ...prev, baguettes: count }));
+      setSelectedSupplements(prevSupplements => {
+        const newSupplements = { ...prevSupplements, baguettes: count };
+        console.log("Mise à jour des suppléments (baguettes) :", newSupplements);
+        onSupplementsChange(newSupplements);
+        return newSupplements;
+      });
     }
   };
+
 
   const renderSupplements = (category) => (
     <div className="supplements-category">
@@ -79,6 +84,7 @@ const SupplementsCards = ({ supplementsData, menuSupplementsLimits, onCostChange
   );
 
   // Rendu pour la sélection des baguettes
+// Rendu pour la sélection des baguettes
 // Rendu pour la sélection des baguettes
 const renderBaguettesSelector = () => (
   <div className="baguettes-category">
